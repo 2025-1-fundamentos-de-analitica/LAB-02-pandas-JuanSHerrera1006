@@ -1,9 +1,11 @@
 """
 Escriba el codigo que ejecute la accion solicitada en cada pregunta. Los
-datos requeridos se encuentran en los archivos `tbl0.tsv`, `tbl1.tsv` y 
-`tbl2.tsv`. En este laboratorio solo puede utilizar las funciones y 
+datos requeridos se encuentran en los archivos `tbl0.tsv`, `tbl1.tsv` y
+`tbl2.tsv`. En este laboratorio solo puede utilizar las funciones y
 librerias de pandas para resolver las preguntas.
 """
+
+import pandas as pd
 
 
 def pregunta_08():
@@ -22,3 +24,8 @@ def pregunta_08():
     39   39   E    5  1998-01-26    44
 
     """
+    dt0 = pd.read_csv("./files/input/tbl0.tsv", sep="\t")
+    ans = dt0.copy()
+
+    ans["suma"] = ans["c0"] + ans["c2"]
+    return ans
